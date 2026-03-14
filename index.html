@@ -28,6 +28,20 @@
       padding: 1rem;
     }
 
+    /* LOGO FIJO */
+    .logo-container {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+    }
+
+    .logo {
+      width: 65px;
+      height: auto;
+      border-radius: 6px;
+    }
+
     .container {
       max-width: 800px;
       margin: 0 auto;
@@ -36,6 +50,7 @@
     header {
       text-align: center;
       margin-bottom: 1.5rem;
+      padding-top: 120px; /* espacio para que no tape el logo */
     }
 
     header h1 {
@@ -113,11 +128,6 @@
       transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease;
     }
 
-    .download-btn:active {
-      transform: translateY(1px);
-      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
-    }
-
     .download-btn:hover {
       background: var(--primary-dark);
     }
@@ -140,5 +150,55 @@
       color: var(--text-muted);
       margin-bottom: 0.4rem;
     }
+  </style>
+</head>
 
-    listo
+<body>
+
+  <!-- LOGO FIJO -->
+  <div class="logo-container">
+    <img src="img/escudo.jpg" alt="Escudo" class="logo">
+  </div>
+
+  <div class="container">
+
+    <header>
+      <h1>Práctica de Excel: Precios, Impuestos y Márgenes</h1>
+      <p>Hoja de cálculo lista para usar en clase, con fórmulas y referencias absolutas.</p>
+    </header>
+
+    <section class="card download-card">
+      <div class="section-title">Archivo de práctica</div>
+      <p>Descargá el archivo de Excel con todos los cálculos listos:</p>
+
+      <p>
+        <span class="tag">Precios</span>
+        <span class="tag">Impuestos</span>
+        <span class="tag">Descuentos</span>
+        <span class="tag">Costos</span>
+        <span class="tag">Margen</span>
+        <span class="tag">Utilidad</span>
+      </p>
+
+      <a class="download-btn" href="precios_con_reportes_completos.xlsx">
+        📥 Abrir / Descargar Excel
+      </a>
+
+      <p class="note">En celular, al tocar el botón se abrirá o descargará el archivo.</p>
+    </section>
+
+    <section class="card">
+      <h2>¿Qué se trabaja en esta hoja?</h2>
+      <p>El archivo está pensado para practicar conceptos clave de Excel aplicados a un contexto de negocios:</p>
+      <ul>
+        <li><span class="highlight">Referencias absolutas</span> como <code>$F$1</code>.</li>
+        <li>Cálculo de <span class="highlight">precio final con impuesto</span>.</li>
+        <li>Aplicación de <span class="highlight">descuentos</span>.</li>
+        <li>Cálculo de <span class="highlight">costo</span>, <span class="highlight">margen</span> y <span class="highlight">utilidad</span>.</li>
+        <li>Uso de una segunda hoja de <span class="highlight">reporte</span>.</li>
+      </ul>
+    </section>
+
+  </div>
+</body>
+</html>
