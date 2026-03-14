@@ -28,6 +28,20 @@
       padding: 1rem;
     }
 
+    /* LOGO FIJO */
+    .logo-container {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+    }
+
+    .logo {
+      width: 65px;
+      height: auto;
+      border-radius: 6px;
+    }
+
     .container {
       max-width: 800px;
       margin: 0 auto;
@@ -36,6 +50,7 @@
     header {
       text-align: center;
       margin-bottom: 1.5rem;
+      padding-top: 120px; /* espacio para que no tape el logo */
     }
 
     header h1 {
@@ -113,11 +128,6 @@
       transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease;
     }
 
-    .download-btn:active {
-      transform: translateY(1px);
-      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
-    }
-
     .download-btn:hover {
       background: var(--primary-dark);
     }
@@ -154,7 +164,14 @@
     }
   </style>
 </head>
+
 <body>
+
+  <!-- LOGO FIJO -->
+  <div class="logo-container">
+    <img src="img/escudo.jpg" alt="Escudo" class="logo">
+  </div>
+
   <div class="container">
     <header>
       <h1>Práctica de Excel: Precios, Impuestos y Márgenes</h1>
@@ -173,8 +190,6 @@
         <span class="tag">Utilidad</span>
       </p>
 
-      <!-- IMPORTANTE: poné el archivo .xlsx en la misma carpeta que este HTML
-           y asegurate de que el nombre coincida con el href -->
       <a class="download-btn" href="precios_con_reportes_completos.xlsx">
         📥 Abrir / Descargar Excel
       </a>
@@ -243,6 +258,7 @@
         <li>Identificar dónde se usan referencias absolutas y dónde relativas.</li>
       </ul>
     </section>
+
   </div>
 </body>
 </html>
